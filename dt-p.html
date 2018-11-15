@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+
+	<link rel="stylesheet" href="css/dt-p.css">
+	<link rel="stylesheet" href="css/swiper.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<script src="js/base.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.countdown.min.js"></script>
+</head>
+
+<body>
+	<div id="dt-p">
+		<!-- 以下是头部 -->
+		<img src="images/dt-p01.png" alt="" class="img">
+		<div class="img-l"></div>
+		<script>
+			var flog = true;
+			$(".img-l").click(function () { //点击后
+				flog = false
+				$(".img").css("display", "none")
+				$("#head").css("position", "fixed")
+			})
+		</script>
+		<div id="head-top">
+			<div id="head">
+				<div class="iconfont icon-zuojiantou head-l"></div>
+				<div class="head-tj">
+					<div class="head-cent">
+						<span><a href="">商品</a></span>
+						<span><a href="">详情</a></span>
+						<span><a href="">评价</a></span>
+					</div>
+				</div>
+				<div class="iconfont icon-more head-r"></div>
+			</div>
+		</div>
+		<script>
+			window.onscroll = function () { //没有点击时才执行
+				var st = document.documentElement.scrollTop || document.body.scrollTop;
+				if (flog) {
+					if (st > 0) {
+						head.style.position = "fixed";
+						$(".head-tj").children().css("display", "block")
+					} else {
+						head.style.position = "static";
+						$(".head-tj").children().css("display", "none")
+					}
+				} else {
+
+					if (st > 0) {
+						console.log(1)
+						$(".head-tj").children().css("display", "block")
+					} else {
+						console.log(2)
+						// head.style.position = "static";
+						$(".head-tj").children().css("display", "none")
+					}
+
+				}
+
+			}
+		</script>
+		<!-- 以下是商品 -->
+		<div id="banner1">
+			<div id="banner" class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="images/dt-p02.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="images/dt-p03.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<script src="js/swiper.js"></script>
+			<script>
+				var bannerSwiper = new Swiper('#banner', {
+					loop: true, //无缝轮播
+				});
+			</script>
+			<div class="mj">
+				<div class="mj-ban">
+					<div class="ml-b-left"><span>[减满]　满300减80,　可叠10次</span></div>
+					<div class="mj-b-right"></div>
+				</div>
+			</div>
+			<div class="sg">
+				<div class="sg-ban">
+					<div class="sg-b-left"><span>闪购　 (每单限购:　10件)</span></div>
+					<div class="sg-b-left-div">
+						<span>剩余时间:</span>
+						<span class="sg-b-right"></span>
+					</div>
+
+				</div>
+			</div>
+			<script>
+				$(function () {
+					$('.sg-b-right').countdown('2018/11/20', function (event) {
+						$(this).html(event.strftime('%D 天 %H:%M:%S'));
+					});
+				})
+			</script>
+			<div class="ckj">
+				<div class="ckj-top">
+					<div class="dj">￥59.00</div>
+					<div class="price">参考价:￥68.00</div>
+					<div class="ckj-sg">闪购</div>
+				</div>
+				<div class="ckj-down">
+					资生堂 珊珂 SENKA 棉润泡沫洁面乳 120g日本进口 （原洗液专科洗面奶）
+				</div>
+			</div>
+
+			<div class="jf">
+				<div class="jf-ban">
+					<div class="jf-b-left">
+						<span>积分:</span>
+						<span class="fjf">评价返积分</span>
+					</div>
+					<div class="jf-b-right"></div>
+				</div>
+			</div>
+
+
+			<div class="dz">
+				<div class="dz-ban">
+					<div class="dz-b-left">
+						<span>送 至:</span>
+					</div>
+					<div class="dz-b-right">
+						<img src="./images/dt-p04.png" alt="">
+						<div><span>上海市-</span>市辖区-<span>黄埔区</span>免运费</div>
+						<span class="xd">下单后3-5个工作日内送达</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="fw">
+				<div class="fw-ban">
+					<div class="fw-b-left">
+						<span>服 务:</span>
+					</div>
+					<div class="fw-b-right">
+						<div>本产品由供应商提供发货，并由百联全球购提供售后服务</div>
+						<span class="th">7天无理由退货</span><span class="myf">免运费</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="xz">
+				<div class="xz-ban">
+					<div class="xz-b-left">
+						<span>选 择:</span>
+					</div>
+					<div class="xz-b-right">
+						<div>1件</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="cs">
+				<div class="cs-ban">
+					<div class="cs-b-left">
+						<span>规格参数</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- 	<script>
+			$("#banner").scroll(function(){
+				$(".img").css("display","none")
+				$("#head").css("top","0")
+			})
+
+		</script> -->
+		<!-- 以下是评价 -->
+		<div id="pj">
+			<div class="pj-footer">
+				<div class="pj-foote-t">
+					<div class="pj-foote-pj">
+						<div>评价:</div>
+						<div><span class="bfb">100%</span class="hpl">好评率</div>
+					</div>
+
+					<div class="szpl">(448条评论)</div>
+				</div>
+				<div class="pj-foote-c">
+					<ul>
+						<li>
+							<div class="pj-one"></div>
+							<div></div>
+						</li>
+						<li></li>
+					</ul>
+
+				</div>
+				<div class="pj-foote-e"></div>
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+</body>
+
+</html>
